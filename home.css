@@ -46,6 +46,7 @@ header{
   content:'MENU';
   font-size:0.65rem;
   font-family: 'Lato', sans-serif;
+  color:black;
 }
 /*NAVIGATION*/
 .nav {
