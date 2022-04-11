@@ -15,6 +15,14 @@ body{
 }
 .copyright{
   display:none;
+  font-family: 'Lato', sans-serif;    
+  position:fixed;
+  top:20rem;
+  right:0;
+  transform: rotate(90deg);
+  font-family: 'Lato', sans-serif;
+  font-size: 0.7rem;
+  font-weight:bold;
 }
 /*HEADER*/
 header{
@@ -205,13 +213,6 @@ figcaption{
 }
 @media(min-width:1280px){
   .copyright {
-    position:fixed;
-    top:20rem;
-    right:0;
-    transform: rotate(90deg);
-    font-family: 'Lato', sans-serif;
-    font-size: 0.7rem;
-    font-weight:bold;
     display:block;
   }
 }
