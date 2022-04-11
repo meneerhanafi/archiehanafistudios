@@ -66,7 +66,7 @@ header{
 }
 .nav__list {
   list-style: none;
-  margin: 9rem auto;
+  margin: 10rem auto;
   padding: 0 2rem;
   display:grid;
   justify-content: center;
