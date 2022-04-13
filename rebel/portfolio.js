@@ -20,7 +20,7 @@ function showDivs(n) {
 let touchstartX = 0
 let touchendX = 0
 
-const slider = document.getElementById('mySlides')
+const slider = document.getElementByClassName('mySlides')
 
 function handleGesture() {
   if (touchendX < touchstartX) alert('swiped left!')
