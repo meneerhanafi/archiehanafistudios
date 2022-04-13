@@ -1,4 +1,4 @@
-/*SLIDER*/
+/*SLIDER CLICK*/
 var slideIndex = 1;
 showDivs(slideIndex);
 
@@ -16,6 +16,25 @@ function showDivs(n) {
   }
   x[slideIndex-1].style.display = "block";
 }
+/*SLIDER TOUCH*/
+let touchstartX = 0
+let touchendX = 0
+
+const slider = document.getElementById('mySlides')
+
+function handleGesture() {
+  if (touchendX < touchstartX) alert('swiped left!')
+  if (touchendX > touchstartX) alert('swiped right!')
+}
+
+slider.addEventListener('touchstart', e => {
+  touchstartX = e.changedTouches[0].screenX
+})
+
+slider.addEventListener('touchend', e => {
+  touchendX = e.changedTouches[0].screenX
+  handleGesture()
+})
 
 
 /*MENU TOGGLE*/
