@@ -1,0 +1,267 @@
+/*IMPORT FONT*/
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Lato:wght@300&display=swap');
+/*BOILER PLATE*/
+/*The first 2 boiler plate is to remove any extra padding and margin*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html{
+  padding: 0;
+  margin: 0;
+}
+/*overflow-x is hidden to hide content outside the 100vh width*/
+body{
+  overflow-x: hidden;
+}
+/* COPYRIGHT should always be vertical and on the right side. Only shown for desktop view*/
+.copyright{
+  display:none;
+  font-family: 'Lato', sans-serif;    
+  position:fixed;
+  top:21rem;
+  right:0;
+  transform: rotate(90deg);
+  font-family: 'Lato', sans-serif;
+  font-size: 0.7rem;
+  font-weight:bold;
+}
+/*CLOSE TOGGLE should always be on the right side. The function is go back to index page*/
+.close__toggle {
+  position:absolute;
+  border: none;
+  background-color:transparent;
+  z-index:8;
+  top:2.5rem;
+  right:1rem;;
+}
+.close__toggle::before{
+  content:'CLOSE';
+  font-size:0.65rem;
+  font-family: 'Lato', sans-serif;
+  color:black;
+}
+a.close__toggle{
+  text-decoration: none;
+  color:black;
+}
+/*MENU TOGGLE should always be on the left side. The function is to open a navigation menu when clicked*/
+.nav__toggle {
+  position:absolute;
+  border: none;
+  background-color:transparent;
+  z-index:10;
+  top:2.5rem;
+  left:1rem;
+}
+.nav__toggle::before{
+  content:'MENU';
+  font-size:0.65rem;
+  font-family: 'Lato', sans-serif;
+  color:black;
+}
+/*NAVIGATION shows up after clicked from top with transition*/
+.nav {
+  position:fixed;
+  inset:0 0 0 0%;
+  background-color:hsl(0 0% 100%/0.8);
+  transform: translateY(-100%);
+  transition: transform 300ms cubic-bezier(.5, 0, .5, 1);
+  z-index:9;
+}
+/*if browser supports, apply blur*/
+@supports (backdrop-filter: blur(0.5rem)){
+  .nav{
+    background-color:hsl(0 0 100%/0.5);
+    backdrop-filter: blur(0.5rem);
+  }
+}
+.nav__list {
+  list-style: none;
+  margin: 10rem auto;
+  padding: 0 2rem;
+  display:grid;
+  justify-content: center;
+  text-align: center;
+}
+.nav__item {
+  font-size:1.25rem;
+  font-family: 'Josefin Sans', sans-serif;
+  letter-spacing: 0.5rem;
+  margin:1rem auto;
+  display:grid;
+  justify-content: center;
+  text-align: center;
+}
+.nav__link{
+  text-decoration: none;
+}/*HOVER EFFECT should be an underline moving from left to right of the text*/
+.text{
+  color: black;
+  text-align: center;
+}
+.text::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 47.5%;
+  height: 2px;
+  background-color: black;
+  transform: scaleX(0);
+  transform-origin:right;
+  transition: transform .3s ease;
+  visibility: hidden;
+}
+.about::after{
+  width:27.5%;
+}
+.contact::after{
+  width:37.5%;
+}
+.text:hover::after{
+  transform: scaleX(1);
+  transform-origin: left;
+}
+/*SOCIAL MEDIA*/
+.nav__link img{
+  width:1rem;
+  aspect-ratio: 1;
+}
+.social{
+  display:flex;
+  gap:1rem;
+  margin:1.5rem auto;
+
+}
+/*NAVIGATION AFTER CLICKED*/
+.nav-open .nav__toggle::before{
+  content:'CLOSE'
+}
+.nav-open .nav {
+  transform: translateY(0);
+}
+.nav-open .nav__link img{
+  transform: translateY(-45%);
+}
+/*CONTENT*/
+.image-container{
+  display:grid;
+  justify-content: center;
+  height:600px;
+  align-items:center;
+}
+.mySlides {
+  width:340px;
+}
+/*FOOTER contains page title and mobile slider buttons*/
+.footer{
+  position:absolute;
+  margin-top:-3rem;
+  left:50%;
+  margin-right:-50%;
+  transform: translateX(-50%);
+  z-index:-1;
+}
+/*PAGE TITLE*/
+.caption{
+  font-family: 'Lato', sans-serif;    
+  font-size:0.5em;
+  text-align:center;
+}
+/*SLIDER BUTTON GENERAL*/
+button{
+  background-color: transparent;
+  border:0;
+}
+/*SLIDER MOBILE shown during mobile view but hidden during desktop view*/
+button img {
+  width:20px;
+}
+.mobile{
+  justify-content: center;
+}
+/*SLIDER DESKTOP shown during desktop view but hidden during mobile view*/
+.slider-desktop-container{
+  display:grid;
+  width:100%;
+  top:40%;
+  left:0;
+  position:absolute;
+}
+.btn-container{
+  display:flex;
+}
+.desktop{
+  justify-content: space-around;
+  gap:40rem;
+}
+.desktop button{
+  display:none;
+}
+/*RESPONSIVENESS*/
+@media(min-width:768px){
+  /*IMAGE SIZE*/
+  .image-container{
+    height:900px;
+  }
+  .mySlides{
+    height:500px;
+    width:100%;
+  }
+}
+@media(min-width:1024px){
+  /*TOGGLE*/
+  .nav__toggle{
+    left:12.5rem;
+  }
+  .close__toggle {
+    right:12.5rem;
+  }
+  /*SLIDER*/
+  button img{
+    width:40px;
+  }
+  .mobile button{
+    display:none;
+  }
+  .desktop button{
+    display:block;
+  }
+}
+@media(min-width:1280px){
+  .copyright {
+    display:block;
+  }
+  /*SLIDER*/
+  .image-container{
+    height:750px;
+  }
+  .mySlides{
+    height:600px;
+    width:100%;
+  }
+  /*HOVER EFFECT*/
+  .text::after{
+    visibility: visible;
+    width:14.5%;
+  }
+  .about::after{
+    width:8.25%;
+  }
+  .contact::after{
+    width:11.5%;
+  }
+}
+@media(min-width:1440px){
+  /*HOVER EFFECT*/
+  .text::after{
+    width:12.75%;
+  }
+  .about::after{
+    width:7.25%;
+  }
+  .contact::after{
+      width:10.25%;
+  }
+}
