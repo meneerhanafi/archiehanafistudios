@@ -143,7 +143,7 @@ main {
     display:flex;
     gap:0.5rem;
     justify-content: center;
-    padding:0 1rem;
+    padding:0 0.5rem;
     overflow:hidden;
     margin: 0 auto;
     position: relative;
@@ -158,7 +158,7 @@ main {
 }
 main img{
     width:170px;
-    margin:0 auto 1rem auto;
+    margin:0 auto 0.5rem auto;
     display:block;   
 }  
 .first-column > div {
