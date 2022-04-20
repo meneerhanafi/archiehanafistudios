@@ -1,6 +1,7 @@
 /*IMPORT FONT*/
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Lato:wght@300&display=swap');
 /*BOILER PLATE*/
+/*The first 2 boiler plate is to remove any extra padding and margin*/
 *,
 *::before,
 *::after {
@@ -10,14 +11,16 @@ html{
   padding: 0;
   margin: 0;
 }
+/*overflow-x is hidden to hide content outside the 100vh width*/
 body{
-  overflow: hidden;
+  overflow-x: hidden;
   animation: fadein 4s ease;
 }
 @keyframes fadein {
   from {opacity: 0;}
   to {opacity:1}
 }
+/* COPYRIGHT should always be vertical and on the right side. Only shown for desktop view*/
 .copyright{
   display:none;
   font-family: 'Lato', sans-serif;    
@@ -27,34 +30,34 @@ body{
   transform: rotate(90deg);
   font-family: 'Lato', sans-serif;
   font-size: 0.7rem;
-  font-weight:bold;
 }
-/*HEADER*/
-header{
-  display:grid;
-  justify-content: center;
+/*CLOSE TOGGLE should always be on the right side. The function is go back to index page*/
+.close__toggle {
+  position:absolute;
+  border: none;
+  background-color:transparent;
+  z-index:8;
+  top:2.5rem;
+  right:1rem;;
 }
-.site-title{
-  font-size: 1.25rem;
-  font-family: 'Josefin Sans', sans-serif;
-  letter-spacing: 0.5rem;
-  width:340px;
-  text-align:center;
-  margin-top:3rem;
-  margin-bottom: 1.5rem;
-  padding:0 1rem;
+.close__toggle::before{
+  content:'CLOSE';
+  font-size:0.65rem;
+  font-family: 'Lato', sans-serif;
+  color:black;
 }
-/*MENU TOGGLE*/
+a.close__toggle{
+  text-decoration: none;
+  color:black;
+}
+/*MENU TOGGLE should always be on the left side. The function is to open a navigation menu when clicked*/
 .nav__toggle {
   position:absolute;
   border: none;
   background-color:transparent;
   z-index:10;
-  top:2%;
-  left:50%;
-  margin-right:-50%;
-  transform: translateX(-50%);
-  
+  top:2.5rem;
+  left:1rem;
 }
 .nav__toggle::before{
   content:'MENU';
@@ -62,39 +65,37 @@ header{
   font-family: 'Lato', sans-serif;
   color:black;
 }
-/*NAVIGATION*/
+/*NAVIGATION shows up after clicked from top with transition*/
 .nav {
   position:fixed;
   inset:0 0 0 0%;
   background-color:hsl(0 0% 100%/0.8);
   transform: translateY(-100%);
   transition: transform 300ms cubic-bezier(.5, 0, .5, 1);
-  display:grid;
-  justify-content: center;
-}
-@supports (backdrop-filter: blur(0.5rem)){
-  .nav{
-    background-color:hsl(0 0 100%/0.5);
-    backdrop-filter: blur(0.5rem);
-  }
+  z-index:9;
+  background-color:hsl(0 0 100%/0.5);
+  backdrop-filter: blur(0.5rem);
 }
 .nav__list {
   list-style: none;
   margin: 10rem auto;
   padding: 0 2rem;
+  display:grid;
+  justify-content: center;
+  text-align: center;
 }
 .nav__item {
   font-size:1.25rem;
   font-family: 'Josefin Sans', sans-serif;
   letter-spacing: 0.5rem;
-  margin:2rem auto;
+  margin:1rem auto;
   display:grid;
   justify-content: center;
   text-align: center;
 }
 .nav__link{
   text-decoration: none;
-}/*HOVER EFFECT*/
+}/*HOVER EFFECT should be an underline moving from left to right of the text*/
 .text{
   color: black;
   text-align: center;
@@ -107,7 +108,7 @@ header{
   height: 2px;
   background-color: black;
   transform: scaleX(0);
-  transform-origin:left;
+  transform-origin:right;
   transition: transform .3s ease;
   visibility: hidden;
 }
@@ -124,13 +125,12 @@ header{
 /*SOCIAL MEDIA*/
 .nav__link img{
   width:1rem;
-  aspect-ratio: 1;
 }
 .social{
   display:flex;
+  align-items: center;
+  height:3rem;
   gap:1rem;
-  margin:0;
-
 }
 /*NAVIGATION AFTER CLICKED*/
 .nav-open .nav__toggle::before{
@@ -138,9 +138,6 @@ header{
 }
 .nav-open .nav {
   transform: translateY(0);
-}
-.nav-open .nav__link img{
-  transform: translateY(-45%);
 }
 /*CONTENT*/
 .image-container{
