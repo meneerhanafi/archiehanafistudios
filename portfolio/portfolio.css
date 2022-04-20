@@ -11,7 +11,12 @@ html{
   margin: 0;
 }
 body{
-  overflow-x: hidden;
+  overflow: hidden;
+  animation: fadein 4s ease;
+}
+@keyframes fadein {
+  from {opacity: 0;}
+  to {opacity:1}
 }
 .copyright{
   display:none;
@@ -35,7 +40,8 @@ header{
   letter-spacing: 0.5rem;
   width:340px;
   text-align:center;
-  margin-top:5rem;
+  margin-top:3rem;
+  margin-bottom: 1.5rem;
   padding:0 1rem;
 }
 /*MENU TOGGLE*/
@@ -44,7 +50,7 @@ header{
   border: none;
   background-color:transparent;
   z-index:10;
-  top:5%;
+  top:2%;
   left:50%;
   margin-right:-50%;
   transform: translateX(-50%);
@@ -76,15 +82,12 @@ header{
   list-style: none;
   margin: 10rem auto;
   padding: 0 2rem;
-  display:grid;
-  justify-content: center;
-  text-align: center;
 }
 .nav__item {
   font-size:1.25rem;
   font-family: 'Josefin Sans', sans-serif;
   letter-spacing: 0.5rem;
-  margin:1rem auto;
+  margin:2rem auto;
   display:grid;
   justify-content: center;
   text-align: center;

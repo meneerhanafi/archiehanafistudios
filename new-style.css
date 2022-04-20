@@ -178,7 +178,7 @@ main img{
         transform: translateY(0%);  
       }
       50% { 
-          transform: translateY(-60%);  
+          transform: translateY(-70%);  
         }
       100% {
           transform: translateY(0%);  
@@ -193,12 +193,12 @@ main img{
 }
 @keyframes moveSlideshowRight {
     0% { 
-      transform: translateY(-80%);  
+      transform: translateY(-70%);  
     }
     50% { 
         transform: translateY(0%);  
       }
     100% {
-        transform: translateY(-80%);  
+        transform: translateY(-70%);  
     }
   }
