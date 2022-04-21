@@ -212,10 +212,14 @@ figcaption{
   }
 }
 @media(min-width:1440px){
-
   .text::after{
     visibility: visible;
-    width:12.75%;
+  }
+  .home::after{
+    width:6.30%;
+  }
+  .portfolio::after{
+    width:12.85%;
   }
   .about::after{
     width:7.25%;

@@ -266,12 +266,18 @@ button img {
 @media(min-width:1440px){
   /*HOVER EFFECT*/
   .text::after{
-    width:12.75%;
+    visibility: visible;
+  }
+  .home::after{
+    width:6.30%;
+  }
+  .portfolio::after{
+    width:12.85%;
   }
   .about::after{
     width:7.25%;
   }
   .contact::after{
-      width:10.25%;
+    width:10.25%;
   }
 }
