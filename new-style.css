@@ -13,7 +13,7 @@ html{
 }
 /*overflow-x is hidden to hide content outside the 100vh width*/
 body{
-  overflow: hidden;
+  overflow-x: hidden;
   animation: fadein 4s ease;
 }
 @keyframes fadein {
