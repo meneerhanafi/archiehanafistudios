@@ -8,7 +8,7 @@ navToggle.addEventListener('click', () => {
 const faders = document.querySelectorAll(".fade-in");
 
 const appearOptions = {
-  threshold: 0.25,
+  threshold: 0,
   rootMargin: "0px 0px -100px 0px"
 };
 
