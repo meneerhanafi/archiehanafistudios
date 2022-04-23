@@ -36,7 +36,7 @@ header{
   padding:0 1rem;
 }
 /*MENU TOGGLE should always be on the left side. The function is to open a navigation menu when clicked*/
-.nav__toggle {
+.nav-toggle {
   position:absolute;
   border: none;
   background-color:transparent;
@@ -46,7 +46,7 @@ header{
   margin-right:-50%;
   transform: translateX(-50%);
 }
-.nav__toggle::before{
+.nav-toggle::before{
   content:'MENU';
   font-size:0.65rem;
   font-family: 'Lato', sans-serif;
@@ -63,7 +63,7 @@ header{
   background-color:hsl(0 0 100%/0.5);
   backdrop-filter: blur(0.5rem);
 }
-.nav__list {
+.nav-list {
   list-style: none;
   margin: 10rem auto;
   padding: 0 2rem;
@@ -71,7 +71,7 @@ header{
   justify-content: center;
   text-align: center;
 }
-.nav__item {
+.nav-item {
   font-size:1.25rem;
   font-family: 'Josefin Sans', sans-serif;
   letter-spacing: 0.5rem;
@@ -80,7 +80,7 @@ header{
   justify-content: center;
   text-align: center;
 }
-.nav__link{
+.nav-link{
   text-decoration: none;
 }/*HOVER EFFECT should be an underline moving from left to right of the text*/
 .text{
@@ -104,7 +104,7 @@ header{
   transform-origin: left;
 }
 /*SOCIAL MEDIA*/
-.nav__link img{
+.nav-link img{
   width:1rem;
 }
 .social{
@@ -114,7 +114,7 @@ header{
   gap:1rem;
 }
 /*NAVIGATION AFTER CLICKED*/
-.nav-open .nav__toggle::before{
+.nav-open .nav-toggle::before{
   content:'CLOSE'
 }
 .nav-open .nav {
