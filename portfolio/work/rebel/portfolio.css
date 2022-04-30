@@ -13,12 +13,31 @@ html{
 }
 /*overflow-x is hidden to hide content outside the 100vh width*/
 body{
+  background-color: rgb(0, 0, 0);
   overflow-x: hidden;
-  animation: fadein 4s ease;
 }
-@keyframes fadein {
-  from {opacity: 0;}
-  to {opacity:1}
+body::before{
+  content:'';
+  background: white;
+  background-size: cover;
+  background-position: center;
+  top:0;
+  left:0;
+  height:100%;
+  width:100%;
+  position:fixed;
+  animation: bodyentrance 0.75s cubic-bezier(.95,.06,.38,.73);
+  transform-origin:top;
+  z-index: -1;
+}
+@keyframes bodyentrance{
+  0%{
+    transform:translateX(100%);
+
+  }
+  100%{
+    transform:translateX(0%);
+  }
 }
 /* COPYRIGHT should always be vertical and on the right side. Only shown for desktop view*/
 .copyright{
@@ -140,6 +159,20 @@ a.close__toggle{
   transform: translateY(0);
 }
 /*CONTENT*/
+.content{
+  z-index:2;
+  animation: content 1.25s ease;
+  animation-fill-mode: both;
+  animation-delay:0.75s;
+}
+@keyframes content{
+  0%{
+    opacity:0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
 .image-container{
   display:grid;
   justify-content: center;
@@ -230,6 +263,7 @@ button img {
   }
   .image-container{
     height:550px;
+    margin-bottom:-1rem;
   }
   .mySlides{
     height:450px;

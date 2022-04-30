@@ -26,9 +26,8 @@ body::before{
   height:100%;
   width:100%;
   position:fixed;
-  animation: bodyentrance 1.5s;
-  transition: transform 300ms cubic-bezier(.5, 0, .5, 1);
-  transform-origin: right;
+  animation: bodyentrance 0.75s cubic-bezier(.95,.06,.38,.73);
+  transform-origin:top;
   z-index: 1;
 }
 @keyframes bodyentrance{
@@ -48,12 +47,11 @@ body::before{
   text-align:center;
   padding:0 1rem;
   position: absolute;
-  top:2rem;
+  top:2.5%;
   left:50%;
   margin-right:-50%;
   transform: translate(-50%,25%);
-  animation: entrance 1.75s;
-  transition: transform 300ms cubic-bezier(.5, 0, .5, 1);
+  animation: entrance 1.5s cubic-bezier(.5, 0, .5, 1);
   z-index:2;
 }
 @keyframes entrance{
@@ -77,20 +75,13 @@ body::before{
     transform:translate(-50%,1000%);
     }
   50%{
-    color:black;
     transform:translate(-50%,1000%);
     }
-  75%{
-      color:black;
-      transform:translate(-50%,1000%);
+  80%{
+      transform:translate(-50%,25%);
       }
-  85%{
-      color:black;
-      transform:translate(-50%,1000%);
-        }
   100%{
-    color:black;
-  transform:translate(-50%,25%);
+    transform:translate(-50%,25%);
   }
 }
 /*MENU TOGGLE should always be on the left side. The function is to open a navigation menu when clicked*/
@@ -99,7 +90,7 @@ body::before{
   border: none;
   background-color:transparent;
   z-index:10;
-  top:1rem;
+  top:1%;
   left:50%;
   margin-right:-50%;
   transform: translateX(-50%);
@@ -119,7 +110,7 @@ body::before{
 }
 .nav-toggle::before{
   content:'MENU';
-  font-size:0.65rem;
+  font-size:0.6rem;
   font-family: 'Lato', sans-serif;
   color:black;
 }
@@ -204,9 +195,9 @@ main {
   transform: translateX(-50%);
   z-index: 3;
   overflow:hidden;
-  animation: content 2s ease;
+  animation: content 1.5s ease;
   animation-fill-mode: both;
-  animation-delay:1.5s;
+  animation-delay:1.0s;
 }
 @keyframes content{
   0%{
@@ -227,7 +218,7 @@ main img{
     display:block;   
 }  
 .odd-column > div {
-    height: 720px;
+    height: 700px;
     width: 100%;
   }
 .odd-column .mover {
@@ -248,7 +239,7 @@ main img{
       }
   }
 .even-column > div {
-    height: 720px;
+    height: 700px;
     width: 100%;
   }
 .even-column .mover {
@@ -265,45 +256,40 @@ main img{
         transform: translateY(-47.5%);  
     }
   }
-  /*RESPONSIVENESS*/
-@media(min-width:768px){
+/*RESPONSIVENESS*/
+@media(min-width:768px)and (max-width:1024px){
   .site-title{
     font-size:1.75rem;
+    width:420px;
   }
   @keyframes entrance{
     0%{
-    opacity:0;
-    color:white;
-    transform:translate(-50%,1500%);
+      opacity:0;
+      color:white;
+    transform:translate(-50%,650%);
     }
     5%{
       opacity:0.5;
       color:white;
-      transform:translate(-50%,1500%);
+      transform:translate(-50%,650%);
       }
     10%{
       opacity:1;
     color:white;
-    transform:translate(-50%,1500%);
+    transform:translate(-50%,650%);
     }
     25%{
+      opacity:1;
       color:white;
-      transform:translate(-50%,1500%);
+      transform:translate(-50%,650%);
       }
     50%{
-      color:black;
-      transform:translate(-50%,1500%);
+      transform:translate(-50%,650%);
       }
-    75%{
-        color:black;
-        transform:translate(-50%,1500%);
+    80%{
+        transform:translate(-50%,25%);
         }
-    85%{
-        color:black;
-        transform:translate(-50%,1500%);
-          }
     100%{
-      color:black;
     transform:translate(-50%,25%);
     }
   }
@@ -318,115 +304,41 @@ main img{
   main img{
     width:375px;
   }
-
 }
 @media(min-width:1024px){
   .site-title{
     font-size:2rem;
     width:100%;
-    top:1rem;
-}
-@keyframes entrance{
-  0%{
-  opacity:0;
-  color:white;
-  transform:translate(-50%,750%);
+    top:1%;
   }
-  5%{
-    opacity:0.5;
-    color:white;
-    transform:translate(-50%,750%);
-    }
-  10%{
-    opacity:1;
-  color:white;
-  transform:translate(-50%,750%);
+  main{
+    top:15%;
   }
-  25%{
-    color:white;
-    transform:translate(-50%,750%);
-    }
-  50%{
-    color:black;
-    transform:translate(-50%,750%);
-    }
-  75%{
-      color:black;
-      transform:translate(-50%,750%);
-      }
-  85%{
-      color:black;
-      transform:translate(-50%,750%);
-        }
-  100%{
-    color:black;
-  transform:translate(-50%,25%);
-  }
-}
-main{
-  top:15%;
-}
-  .right{
-  display:block;
-}
   main img{
-  width:225px;
-}
-.odd-column > div {
-  height:500px;
-}
-.even-column > div {
-  height:500px;
-}
-@media(min-width:1280px){
-  .copyright {
+    width:200px;
+  }
+  .right{
     display:block;
   }
-  @keyframes entrance{
-    0%{
-    opacity:0;
-    color:white;
-    transform:translate(-50%,1000%);
-    }
-    5%{
-      opacity:0.5;
-      color:white;
-      transform:translate(-50%,1000%);
-      }
-    10%{
-      opacity:1;
-    color:white;
-    transform:translate(-50%,1000%);
-    }
-    25%{
-      color:white;
-      transform:translate(-50%,1000%);
-      }
-    50%{
-      color:black;
-      transform:translate(-50%,1000%);
-      }
-    75%{
-        color:black;
-        transform:translate(-50%,1000%);
-        }
-    85%{
-        color:black;
-        transform:translate(-50%,1000%);
-          }
-    100%{
-      color:black;
-    transform:translate(-50%,25%);
-    }
+  .odd-column > div {
+    height:500px;
+  }
+  .even-column > div {
+    height:500px;
+  }
+}
+@media(min-width:1280px){
+  main{
+    top:12%;
   }
   main img{
     width:250px;
   }
   .odd-column > div {
-    height:620px;
+    height:650px;
   }
   .even-column > div {
-    height:620px;
+    height:650px;
   }
 }
 @media(min-width:1440px){

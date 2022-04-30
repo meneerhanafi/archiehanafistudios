@@ -13,8 +13,31 @@ html{
 }
 /*overflow-x is hidden to hide content outside the 100vh width*/
 body{
+  background-color: rgb(0, 0, 0);
   overflow-x: hidden;
-  animation: fadein 4s ease;
+}
+body::before{
+  content:'';
+  background: white;
+  background-size: cover;
+  background-position: center;
+  top:0;
+  left:0;
+  height:100%;
+  width:100%;
+  position:fixed;
+  animation: bodyentrance 0.75s cubic-bezier(.95,.06,.38,.73);
+  transform-origin: bottom;
+  z-index: 1;
+}
+@keyframes bodyentrance{
+  0%{
+    transform:translateX(-100%);
+
+  }
+  100%{
+    transform:translateX(0%);
+  }
 }
 @keyframes fadein {
   from {opacity: 0;}
@@ -37,14 +60,18 @@ header{
   justify-content: center;
 }
 .site-title{
-  font-size: 1.25rem;
+  width:100%;
+  font-size: 1rem;
   font-family: 'Josefin Sans', sans-serif;
   letter-spacing: 0.5rem;
-  width:340px;
   text-align:center;
-  margin-top:5rem;
-  margin-bottom: 0rem;
   padding:0 1rem;
+  position: absolute;
+  top:2.5%;
+  left:50%;
+  margin-right:-50%;
+  transform: translate(-50%,25%);
+  z-index:2;
 }
 /*MENU TOGGLE should always be on the left side. The function is to open a navigation menu when clicked*/
 .nav-toggle {
@@ -52,14 +79,17 @@ header{
   border: none;
   background-color:transparent;
   z-index:10;
-  top:2.5rem;
+  top:1%;
   left:50%;
   margin-right:-50%;
   transform: translateX(-50%);
+  animation: toggle 1s ease;
+  animation-fill-mode: both;
+  animation-delay: 2s;
 }
 .nav-toggle::before{
   content:'MENU';
-  font-size:0.65rem;
+  font-size:0.6rem;
   font-family: 'Lato', sans-serif;
   color:black;
 }
@@ -138,6 +168,28 @@ header{
   transform: translateY(0);
 }
 /*CONTENT*/
+.content{
+  position: absolute;
+  top:10%;
+  left:50%;
+  margin-right:-50%;
+  transform: translate(-50%,0);
+  z-index:2;
+  animation: content 1.25s ease;
+  animation-fill-mode: both;
+  animation-delay:0;
+  transform-origin: bottom;
+}
+@keyframes content{
+  0%{
+    opacity:1;
+    transform: translate(-50%,50%)
+  }
+  100%{
+    opacity: 1;
+    transform: translate(-50%,0)
+  }
+}
 .content-container{
   display:grid;
   justify-content: center;
@@ -146,7 +198,7 @@ header{
 .img-container{
   display:grid;
   justify-content: center;
-  padding:2rem 0;
+  padding:1.5rem 0;
 }
 img {
   width:340px;
@@ -189,18 +241,23 @@ figcaption{
   .site-title{
     font-size:1.75rem;
     width:420px;
-    margin-top:7rem;
+  }
+  .content{
+    top:12.5%;
   }
   img{
-    width:510px;
-    height:660px;
+    width:552.5px;
+    height:715px;
   }
 }
 @media(min-width:1024px){
   .site-title{
     font-size:2rem;
-    margin-top:10%;
     width:100%;
+    top:1%;
+}
+.content{
+  top:10%;
 }
   .content-container{
     display:flex;
@@ -219,7 +276,9 @@ figcaption{
 @media(min-width:1280px){
   .copyright {
     display:block;
+    z-index:1;
   }
+
 }
 @media(min-width:1440px){
   .text::after{
