@@ -224,21 +224,21 @@ header{
 /*CONTENT*/
 .content{
     position: absolute;
-    top:10%;
+    top:12.5%;
     left:50%;
     margin-right:-50%;
     transform: translate(-50%,0);
     z-index:2;
-    animation: content 1.15s ease;
+    animation: content 1s ease;
     animation-fill-mode: both;
-    animation-delay:0.5s;
+    animation-delay:1s;
     transform-origin: bottom;
 }
   
 @keyframes content{
     0%{
-        opacity:1;
-        transform: translate(-50%,50%)
+        opacity:0;
+        transform: translate(-50%,300%)
     }
     100%{
         opacity: 1;
@@ -254,57 +254,29 @@ header{
 }
 
 .content-container img {
-    width:340px;
-    height:440px;
-    margin:0 auto 1rem auto;
+    width:150px;
+    margin:auto;
     display:block;  
     transition: 0.5s ease;  
+    border-radius: 50%;
+
 }
 
-.content-container img:hover{
-    transform: scale(1.05);
-}
-  
-.content-container .landscape{
-    object-fit: cover;
-    object-position: 50% 50%; 
-}
-  
-.content-container .eva {
-    object-position:75% 25%;
-}
-  
-.content-container .palma {
-    object-position:45% 55%;
+p{
+    margin-top:2rem;
+    font-family: 'Lato', sans-serif;    
+    width:325px;
+    line-height: 1.5rem;
 }
 
-.content-container a{
-    text-decoration: none;
-    color:black;
-    font-size:0.9rem;
-    font-family: 'Lato', sans-serif;
-}
 
-.img-container{
-    display:grid;
-    justify-content: center;
-    padding:1.5rem 0; 
-}
-  
-figcaption{
-    text-align: center;
-}
-  
-.fade-in {
-    opacity: 0;
-    transition: opacity 300ms cubic-bezier(.5, 0, .5, 1);
-}
-  
-.fade-in.appear {
-    opacity:1;
-}
   
 /*RESPONSIVENESS*/
+@media(min-width:390px){
+    main{
+        top:10.5%;
+    }
+}
 
 @media(min-width:481px){
     header{
@@ -323,10 +295,6 @@ figcaption{
     .content{
         top:12.5%;
     }
-    .content-container img{
-        width:552.5px;
-        height:715px;
-    }
 }
 
 @media(min-width:1024px){
@@ -343,41 +311,8 @@ figcaption{
     .content{
         top:15%;
     }
-    .content-container{
-        display:flex;
-        justify-content: space-between;
-        width:960px;
-    }
-    .content-container img {
-        width:297.5px;
-        height:385px;
-    }
-    .content-container .landscape{
-        width:595px;
-        height:385px;
-    }
 }
 
-@media(min-width:1280px){
-    .content{
-        top:10%;
-    }
-    .copyright {
-        opacity:1;
-        z-index:1;
-        animation: copyright 1s ease;
-        animation-delay: 1.5s;
-        animation-fill-mode: both;
-    }
-    @keyframes copyright{
-        0%{
-            opacity:0;
-        }
-        100%{
-            opacity:1;
-        }
-    }
-}
 
 @media(min-width:1440px){
     .text::after{
@@ -395,17 +330,5 @@ figcaption{
     .contact::after{
         width:10.25%;
     }
-    .content-container{
-        display:flex;
-        justify-content: space-between;
-        width:1150px;
-    }
-    .content-container img {
-        width:361.25px;
-        height:467.5px;
-    }
-    .content-container .landscape{
-        width:722.5px;
-        height:467.5px;
-    }
+
 }
