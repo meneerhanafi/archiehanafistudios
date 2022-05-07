@@ -379,8 +379,9 @@ main img{
     }
 }
 @media(min-width:1440px){
-  main{
-    gap:0.5rem;
+
+    .content-container{
+      gap:0.5rem;
     }
   .text::after{
     visibility: visible;
@@ -399,9 +400,10 @@ main img{
     }
   main{
     top:12.5%;
+    gap:1rem;
     }
   main img{
-    width:350px;
+    width:340px;
     }
   .odd-column > div {
     height:700px;
