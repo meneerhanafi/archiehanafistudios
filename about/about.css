@@ -267,9 +267,13 @@ header{
 p{
     margin-top:2rem;
     font-family: 'Lato', sans-serif;    
-    width:325px;
+    width:335px;
     line-height: 1.5rem;
     font-size:0.9rem;
+    text-align:center;
+}
+.link{
+    color:black;
 }
 
 
@@ -309,23 +313,6 @@ p{
     .content{
         top:15%;
     }
-    .content-container{
-        display:flex;
-        gap:5rem;
-    }
-    .content-container img {
-        width:350px;
-        aspect-ratio: auto;
-        margin:auto;
-        display:block;  
-        transition: 0.5s ease;  
-        border-radius: 0;
-        object-position: 100% 100%;
-    }
-    p{
-        margin-top:0;
-        width:500px;
-    }
 }
 
 
@@ -345,9 +332,4 @@ p{
     .contact::after{
         width:10.25%;
     }
-    .content-container img{
-        width:500px;
-    }
-
-
 }
