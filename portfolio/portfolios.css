@@ -110,6 +110,7 @@ header{
     font-size: 0.7rem;
 }
 
+
 /*NAVIGATION TOGGLE as a clickable button*/
 .nav-toggle::before{
     content:'MENU';
@@ -117,6 +118,7 @@ header{
     font-family: 'Lato', sans-serif;
     color:black;
     z-index:999;
+    cursor: pointer;
 }
 
 .nav-toggle {
@@ -251,6 +253,7 @@ header{
     justify-content: center;
     margin:auto;
     overflow:hidden;
+    
 }
 
 .content-container img {
@@ -261,9 +264,6 @@ header{
     transition: 0.5s ease;  
 }
 
-.content-container img:hover{
-    transform: scale(1.05);
-}
   
 .content-container .landscape{
     object-fit: cover;
@@ -288,11 +288,17 @@ header{
 .img-container{
     display:grid;
     justify-content: center;
-    padding:1.5rem 0; 
+    overflow:hidden;
+    height:440px;
 }
   
+.img-container img:hover{
+    transform: scale(1.05);
+}
+
 figcaption{
     text-align: center;
+    margin:1rem 0 2rem 0;
 }
   
 .fade-in {
@@ -356,11 +362,14 @@ figcaption{
         width:595px;
         height:385px;
     }
+    .img-container{
+        height:385px;
+    }
 }
 
 @media(min-width:1280px){
     .content{
-        top:10%;
+        top:12.5%;
     }
     .copyright {
         opacity:1;
@@ -380,6 +389,9 @@ figcaption{
 }
 
 @media(min-width:1440px){
+    .copyright{
+        right:-2.5rem;
+    }
     .text::after{
         visibility: visible;
     }
@@ -395,17 +407,23 @@ figcaption{
     .contact::after{
         width:10.25%;
     }
+    .content{
+        top:15%;
+    }
     .content-container{
         display:flex;
         justify-content: space-between;
-        width:1150px;
+        width:1260px;
     }
     .content-container img {
-        width:361.25px;
-        height:467.5px;
+        width:403.75px;
+        height:522.5px;
     }
     .content-container .landscape{
-        width:722.5px;
-        height:467.5px;
+        width:807.5px;
+        height:522.5px;
+    }
+    .img-container{
+        height:522.5px;
     }
 }

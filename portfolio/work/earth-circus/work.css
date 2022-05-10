@@ -253,13 +253,15 @@ a.close__toggle{
 .image-container{
     display:grid;
     justify-content: center;
-    height:550px;
+    height:585px;
     align-items: center;
     padding-top:2rem;
+
 }
 
 .mySlides {
-    width:300px;
+    margin-top:1rem;
+    width:340px;
 }
 
 /*PAGE TITLE*/
@@ -269,6 +271,8 @@ figcaption{
     font-size:0.9rem;
     font-family: 'Lato', sans-serif;
     text-align: center;
+    margin-top:0rem;
+    margin-bottom:-0.5rem;
 }
 
 /*SLIDER BUTTON GENERAL*/
@@ -366,9 +370,7 @@ button img {
      width:auto;
     }
 
-    .footer{
-      bottom:7.5%;
-    }
+
 }
 
 @media(min-width:1280px){
@@ -382,7 +384,7 @@ button img {
     }
 
     .mySlides{
-      height:600px;
+      height:650px;
       width:auto;
     }
 }

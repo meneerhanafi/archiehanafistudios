@@ -109,6 +109,7 @@ header{
   font-family: 'Lato', sans-serif;
   color:black;
   z-index:999;
+  cursor: pointer;
 }
 
 .nav-toggle {
