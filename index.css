@@ -257,7 +257,7 @@ main {
   opacity: 1;
   display: block;
   height: auto;
-  transition: .5s ease;
+ 
   backface-visibility: hidden;
 }
 
@@ -275,6 +275,7 @@ main {
 
 .content-container a:hover .image {
   opacity: 0.3;
+  border:1px solid black;
 }
 
 .content-container a:hover .middle {
@@ -285,6 +286,7 @@ main {
   color: black;
   font-size: 12px;
   padding:10px;
+  opacity: 0.75;
 }
 
 
@@ -388,7 +390,7 @@ main img{
     width:230px;
     }
   .text{
-    font-size:1.25rem;
+    font-size:1rem;
   }
   
   /*BREAK CONTENT INTO FOUR COLUMNS*/
