@@ -184,23 +184,11 @@ header{
   color: black;
   text-align: center;
 }
+.text:hover{
+  color:rgba(101, 101, 101, 0.823);
+}
 
-.text::after {
-  content: '';
-  position: absolute;
-  display: block;
-  height: 2px;
-  background-color: black;
-  transform: scaleX(0);
-  transform-origin:right;
-  transition: transform .3s ease;
-  visibility: hidden;
-}
-  
-.text:hover::after{
-  transform: scaleX(1);
-  transform-origin: left;
-}
+
 
 /*SOCIAL MEDIA*/
 .nav-link img{
@@ -282,7 +270,7 @@ main {
   opacity: 1;
 }
 
-.text {
+.texts {
   color: black;
   font-size: 12px;
   padding:10px;
@@ -375,6 +363,12 @@ main img{
   .nav-toggle{
     top:2%;
     }
+  .nav-item{
+      font-size:1.75rem;
+    }
+  .nav-link img{
+      width:1.5rem;
+    }
   header{
     margin-top:5%;
     }
@@ -389,7 +383,7 @@ main img{
   main img{
     width:230px;
     }
-  .text{
+  .texts{
     font-size:1rem;
   }
   
@@ -466,21 +460,6 @@ main img{
 @media(min-width:1440px){
   .content-container{
       gap:0.5rem;
-  }
-  .text::after{
-    visibility: visible;
-  }
-  .home::after{
-    width:6.30%;
-  }
-  .portfolio::after{
-    width:12.85%;
-  }
-  .about::after{
-    width:7.25%;
-  }
-  .contact::after{
-    width:10.25%;
   }
   main{
     top:12.5%;
