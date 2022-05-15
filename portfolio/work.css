@@ -54,49 +54,7 @@ body::before{
     }
 }
 
-/*
-Header should start from the center of the page then finish at the top
-*/
-header{
-    display:grid;
-    height:100%;
-    animation: entrance 1.5s cubic-bezier(.5, 0, .5, 1);
-    animation-fill-mode: both;
-    justify-content: center;
-    align-items: center;
-    margin-top:14.5%;
-}
 
-@keyframes entrance{
-    0%{
-        opacity:0;
-        height:90vh;
-        color:white;
-    }
-    25%{
-        opacity:1;
-    }
-    50%{
-        height:90vh;
-        transform: translateY(0);
-    }
-    99%{
-        height:90vh;
-    }
-    100%{
-        transform: translateY(-50%);
-    }
-}
-
-.site-title{
-    width:100%;
-    font-size: 1rem;
-    font-family: 'Josefin Sans', sans-serif;
-    letter-spacing: 0.5rem;
-    text-align:center;
-    padding:0 1rem;
-    z-index:1;
-}
 
 /*COPYRIGHT*/
 .copyright{
@@ -188,31 +146,9 @@ a.close__toggle{
     color: black;
     text-align: center;
 }
-.text::after {
-    content: '';
-    position: absolute;
-    display: block;
-    width: 47.5%;
-    height: 2px;
-    background-color: black;
-    transform: scaleX(0);
-    transform-origin:right;
-    transition: transform .3s ease;
-    visibility: hidden;
-}
-
-.about::after{
-    width:27.5%;
-}
-
-.contact::after{
-    width:37.5%;
-}
-
-.text:hover::after{
-    transform: scaleX(1);
-    transform-origin: left;
-}
+.text:hover{
+    color:rgba(101, 101, 101, 0.823);
+  }
 
 /*SOCIAL MEDIA*/
 .nav__link img{
@@ -338,6 +274,9 @@ button img {
     .nav__toggle{
       left:12.5rem;
     }
+    .nav__item{
+        font-size:1.75rem;
+    }
 
     .close__toggle {
       right:12.5rem;
@@ -384,24 +323,5 @@ button img {
     .mySlides{
       height:600px;
       width:auto;
-    }
-}
-
-@media(min-width:1440px){
-    /*HOVER EFFECT*/
-    .text::after{
-      visibility: visible;
-    }
-    .home::after{
-      width:6.30%;
-    }
-    .portfolio::after{
-      width:12.85%;
-    }
-    .about::after{
-      width:7.25%;
-    }
-    .contact::after{
-      width:10.25%;
     }
 }
