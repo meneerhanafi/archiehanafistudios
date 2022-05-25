@@ -288,6 +288,13 @@ button img {
       right:12.5rem;
     }
 
+    .nav-item{
+      font-size:1.75rem;
+    }
+  .nav-link img{
+      width:1.5rem;
+    }
+
     /*SLIDER*/
     button img{
       width:40px;
