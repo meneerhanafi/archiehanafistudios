@@ -231,7 +231,7 @@ button img {
 .slider-desktop-container{
     display:grid;
     width:100%;
-    top:40%;
+    top:50%;
     left:0;
     position:absolute;
 }
@@ -243,7 +243,7 @@ button img {
 
 .desktop{
     justify-content: space-around;
-    gap:40rem;
+    gap:65rem;
 }
 
 .desktop button{
