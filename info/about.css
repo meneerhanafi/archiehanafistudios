@@ -317,6 +317,9 @@ p{
     header{
         margin-top: 5rem;
     }
+    .content{
+        top:8rem;
+    }
 }
 
 
